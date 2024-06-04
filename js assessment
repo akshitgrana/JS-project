@@ -1,0 +1,68 @@
+/* 
+// Metacrafters - Beginning Javascript
+//
+// This is a javascript playground for testing your javascript code!
+// When you are ready to test, simply right click and select "Run Code"
+// to see the result print below. If you have more then one snippet of code,
+// you can highlight the code you want to test, and then right click and select "Run Code"
+*/
+
+// Enter your code below this line
+
+// Code example
+// for(var i=1; i<=5; i++) {
+//  console.log(i);
+// }
+
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+
+// Create a variable to hold your NFTs
+const  nfts = [];
+
+// This function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata,
+// and store it in the variable above.
+function mintNFT(name, season, brand, size) {
+    const nft = {
+        "name": name,
+        "season": season,
+        "brand": brand,
+        "size": size
+    };
+    nfts.push(nft);
+}
+
+// Create a "loop" that will go through an "array" of NFTs
+// and print their metadata with console.log()
+function listNFTs() {
+    for (let i= 0; i < nfts.length; i++)  {
+        console.log("\nName: "+nfts[i].name);
+        console.log("Season: "+nfts[i].season);
+        console.log("Brand: "+nfts[i].brand);
+        console.log("Size: "+nfts[i].size);
+        console.log("---------------------");
+    }
+}
+
+// Print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+    console.log("\nTotal Supply: "+nfts.length);
+}
+
+// Call your functions below this line
+mintNFT("Winter Jacket", "Winter", "North Face", "L");
+mintNFT("Summer T-Shirt", "Summer", "Nike", "M");
+mintNFT("Spring Raincoat", "Spring", "Columbia", "S");
+mintNFT("Fall Sweater", "Fall", "Gap", "XL");
+
+listNFTs();
+getTotalSupply();
+
